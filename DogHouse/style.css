@@ -1,0 +1,244 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+@font-face {
+  font-family: 'Foo';
+  src: url('./fonts/Foo-Regular.woff2') format('woff2');
+  src: url('./fonts/foo.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Baloo 2';
+  src: url('./fonts/Baloo2-Bold.woff2') format('woff2');
+  src: url('./fonts/Baloo2-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+.bg {
+  min-height: 100vh;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  object-fit: cover;
+}
+
+main {
+  background-image: url('./img/bg-houses.png');
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: cover;
+  min-height: 100vh;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.logo {
+  width: 53%;
+  margin-top: 52px;
+  animation: logo-anim 4s ease infinite;
+}
+
+@keyframes logo-anim{
+  0% {
+    transform: rotate(-3deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+  100% {
+    transform: rotate(-3deg);
+  }
+}
+
+.phone {
+  position: absolute;
+  top: 160px;
+  left:50%;
+  transform:translate(-50%, 0) rotate(12deg);
+}
+
+.video {
+  position: absolute;
+  top: 14px;
+  max-width: 258px;
+  left: 17px;
+  z-index: -1;
+  border-radius: 30px;
+}
+
+h1 {
+  color: #FFF;
+  text-shadow: 0px 48px 80px rgba(26, 26, 26, 1), 4px 4px 32px rgba(48, 30, 30, 0.8);
+  font-family: 'Foo';
+  font-size: 88px;
+  line-height: 80%;
+  letter-spacing: -1.76px;
+  position: relative;
+  z-index: 1;
+  padding-top: 370px;
+  -webkit-text-stroke: 3px #F75900;
+  text-stroke: 3px #F75900;
+}
+
+h1 span {
+  color: #FFF10F;
+}
+
+.button {
+  padding-bottom: 65px;
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+  margin: auto;
+}
+
+.bonus {
+  margin-top: 80px;
+  padding: 39px 56.5px;
+  border-radius: 60px;
+  border: 4px solid #FCF8BA;
+  background: #FFF10F;
+  box-shadow: 0px 8px 16px 0px rgba(26, 26, 26, 0.50), 0px 0px 48px 0px #7CB941;
+  color: #602606;
+  font-family: 'Baloo 2';
+  font-size: 44px;
+  line-height: 54.5%;
+  letter-spacing: -0.88px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+  transition: all 200ms ease, transform 1s;
+}
+
+.bonus:hover {
+  background: #FFF54B;
+  box-shadow: 0px 8px 40px 0px rgba(26, 26, 26, 0.50), 0px 0px 64px 0px #7CB941;
+  color: #893C11;
+  transform: scale(1.05);
+}
+
+.lights {
+  position: absolute;
+  bottom: -120%;
+  width: 200%;
+  left: -45%;
+  z-index: 0;
+  animation: spin 20s linear 0s infinite;
+}
+
+@keyframes spin {
+  0% {transform: rotate(0deg);}
+  100% {transform: rotate(360deg);}
+}
+
+.dog {
+  position: absolute;
+  bottom: 32px;
+  max-height: 472px;
+}
+
+.leftD {
+  left: 0;
+  animation: dog-left 5s ease infinite;
+}
+
+.rightD {
+  right: 0;
+  animation: dog-right 4.5s ease infinite;
+}
+
+@keyframes dog-left{
+  0% {
+    transform: translateY(0px);
+  }
+  45% {
+    transform: translateY(25px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes dog-right{
+  0% {
+    transform: translateY(0px);
+  }
+  65% {
+    transform: translateY(25px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  h1 {
+    font-size: calc(44px + 44 * (100vw - 390px) / 1050);
+    padding-top: calc(259px + 111 * (100vw - 390px) / 1050);
+  }
+  .logo {
+    margin-top: calc(8px + 44 * (100vw - 390px) / 1050);
+  }
+  .phone {
+    top: calc(85px + 75 * (100vw - 900px) / 540);
+  }
+  .frame {
+    width: calc(182px + 109 * (100vw - 390px) / 1050);
+  }
+  .video {
+    max-width: calc(165px + 93 * (100vw - 390px) / 1050);
+    left: calc(9px + 8 * (100vw - 390px) / 1050);
+    top: calc(7px + 7 * (100vw - 390px) / 1050);
+  }
+  .bonus {
+    padding-top: calc(24.5px + 14.5 * (100vw - 390px) / 1050);
+    padding-bottom: calc(24.5px + 14.5 * (100vw - 390px) / 1050);
+    padding-left: calc(39px + 17.5 * (100vw - 390px) / 1050);
+    padding-right: calc(39px + 17.5 * (100vw - 390px) / 1050);
+    font-size: calc(24px + 20 * (100vw - 390px) / 1050);
+  }
+  .dog {
+    max-height: calc(191px + 281 * (100vw - 390px) / 1050);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  h1 {
+    -webkit-text-stroke: 1px #F75900;
+    text-stroke: 1px #F75900;
+  }
+  .logo {
+    width: 80%;
+  }
+  .phone {
+    top: calc(56px + 50 * (100vw - 500px) / 400);
+  }
+  .lights {
+    bottom: -105%;
+  }
+  .dog {
+    bottom: 54px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .logo {
+    width: 100%;
+  }
+  .phone {
+    top: calc(50px + 13 * (100vw - 390px) / 110);
+  }
+  .lights {
+    bottom: -88%;
+  }
+}
